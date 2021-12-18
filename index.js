@@ -6,8 +6,8 @@ const ctx = canvas.getContext("2d");
 const { layers, width, height } = require("./input/config.js");
 const edition = 1;
 
-const saveLayer = (_canvas) => {
-  fs.writeFileSync("./newImage.png", _canvas.toBuffer("image/png"));
+const saveLayer = (_canvas, _edition) => {
+  fs.writeFileSync(`./output/${_edition}.png`, _canvas.toBuffer("image/png"));
   console.log("image created");
 };
 
@@ -28,7 +28,7 @@ const drawLayer = async (_layer, _edition) => {
   console.log(
     `I created the ${_layer.name} layer, and choose element ${element.name}`
   );
-  // saveLayer(canvas);
+  saveLayer(canvas, _edition);
 };
 
 for (let i = 1; i <= edition; i++) {
