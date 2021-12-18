@@ -98,4 +98,6 @@ const layers = [
   },
 ];
 
-console.log(layers);
+// console.log(layers);
+
+module.exports = { layers, width, height };
